@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MinhThanhManagement.View;
+using MinhThanhManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,13 @@ namespace MinhThanhManagement
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OpenHome(object sender, RoutedEventArgs e)
+        {
+            HomeView Home = new HomeView();
+            this.Visibility = Visibility.Hidden;
+            Home.Show();
         }
     }
 }

@@ -15,10 +15,7 @@ namespace MinhThanhManagement
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-
-            CommonMethod commonMethod = new CommonMethod();
-            commonMethod.ReadFileCsv();
+           
         }
     }
 }
