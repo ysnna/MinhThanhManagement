@@ -22,6 +22,11 @@ namespace MinhThanhManagement.View
         public HomeView()
         {
             InitializeComponent();
+            foreach(var item in GlobalDef.ListStorageModel)
+            {
+                DataGridXaml.Items.Add(item);
+            }
+            
         }
     }
 }

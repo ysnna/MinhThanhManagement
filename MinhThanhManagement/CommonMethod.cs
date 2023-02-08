@@ -13,15 +13,17 @@ namespace MinhThanhManagement
         {
 
             string path = GlobalDef.CsvPath + "MinhThanhManagement.csv";
-
+            
             string[] lines = System.IO.File.ReadAllLines(path);
             foreach (string line in lines)
             {
+                StorageModel storeModel = new StorageModel();
                 string[] models = line.Split(',');
-                StorageModel.GetInstance().Group.Add(models[0]);
-                StorageModel.GetInstance().Name.Add(models[1]);
-                StorageModel.GetInstance().Remain.Add(models[2]);
-                StorageModel.GetInstance().Price.Add(Convert.ToDouble(models[3].ToString()));
+                storeModel.Group = (models[0]);
+                storeModel.Name = (models[1]);
+                storeModel.Remain = (models[2]);
+                storeModel.Price =(Convert.ToDouble(models[3].ToString()));
+                GlobalDef.ListStorageModel.Add(storeModel);
             }
         }
         public void ConvertToModel()
